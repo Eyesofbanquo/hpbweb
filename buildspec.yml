@@ -3,13 +3,13 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 10
+      nodejs: 12
     commands:
       - npm install serverless -g
       - npm install
-    build:
-      commands:
-        - sls deploy -s dev
+  build:
+    commands:
+      - sls deploy -s dev
 artifacts:
   files:
     - "**/**"
