@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const serverless = require("serverless-http");
@@ -135,4 +137,8 @@ app.get("/", (request, response) => {
 
 // app.listen(3000);
 
-module.exports.handler = serverless(app);
+if (process.env.LOCAL_ENABLED) {
+  app.listen(3000, () => console.log('Running on port 3000'));
+} else {
+  module.exports.handler = serverless(app);
+}
