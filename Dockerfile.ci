@@ -1,0 +1,10 @@
+FROM node:15.11.0-alpine3.10
+
+COPY src/ package.json ./
+
+ENV LOCAL_ENABLED=true
+
+RUN npm ci
+
+# You can overwrite command in `serverless.yml` template
+CMD ["npm", "run", "test"]
