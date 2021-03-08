@@ -1,0 +1,21 @@
+name: Main Tests
+
+on:
+  pull_request:
+    branches: ["master"]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Build Docker image
+        run: docker build -t hpbtest -f Dockerfile.ci .
+
+      - name: Run Docker image
+        run: docker run hpbtest

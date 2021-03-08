@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./src/app.js",
-    "dev": "    "
+    "dev": "docker build -t hpbweb:latest -f Dockerfile.dev . && docker run -dp 3000:3000 hpbweb:latest",
+    "test": "LOCAL_ENABLED=true mocha \"./src/**/*.test.js\" --reporter nyan --exit",
+    "ci:test": "LOCAL_ENABLED=true mocha \"**/*.test.js\" --reporter nyan --exit",
+    "inspect:ci:test": "docker run -it --entrypoint=/bin/sh hpbtest"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +16,11 @@
   "dependencies": {
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
+    "chai": "^4.3.3",
+    "chai-http": "^4.3.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "mocha": "^8.3.1",
     "serverless-http": "^2.7.0"
   }
 }
