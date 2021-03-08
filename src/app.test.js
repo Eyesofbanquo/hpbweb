@@ -42,7 +42,7 @@ describe("App Test", () => {
       chai.request(app)
       .get('/product')
       .end((error, response) => {
-        response.should.have.status(233300);
+        response.should.have.status(200);
         done();
       })
     })
