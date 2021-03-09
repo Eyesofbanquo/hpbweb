@@ -1,12 +1,12 @@
 require('dotenv').config();
 
-const express = require('express');
 const bodyParser = require('body-parser');
+const express = require('express');
 const serverless = require('serverless-http');
 
-const searchRouter = require('./routes/search.route');
-const productRouter = require('./routes/product.route');
 const indexRouter = require('./routes/index.route');
+const productRouter = require('./routes/product.route');
+const searchRouter = require('./routes/search.route');
 
 const app = express();
 app.use(bodyParser.json());
