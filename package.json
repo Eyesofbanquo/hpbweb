@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./src/app.js",
+    "start:dev": "LOCAL_ENABLED=true node ./src/app.js",
     "dev": "docker build -t hpbweb:latest -f Dockerfile.dev . && docker run -dp 3000:3000 hpbweb:latest",
     "test": "LOCAL_ENABLED=true mocha \"./src/**/*.test.js\" --reporter nyan --exit",
     "ci:test": "LOCAL_ENABLED=true mocha \"**/*.test.js\" --reporter nyan --exit",
