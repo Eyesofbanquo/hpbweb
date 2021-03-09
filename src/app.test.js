@@ -13,7 +13,7 @@ describe("App Test", () => {
 
     it('should successfully return quick-search data', (done) => {
       chai.request(app)
-      .get('/search/search')
+      .get('/search')
       .end((error, response) => {
         response.should.have.status(200);
         done();
@@ -22,7 +22,7 @@ describe("App Test", () => {
 
     it('should successfully return top-results data', (done) => {
       chai.request(app)
-      .get('/search/top-results')
+      .get('/search/top')
       .end((error, response) => {
         response.should.have.status(200);
         done();
@@ -31,7 +31,7 @@ describe("App Test", () => {
 
     it('should successfully return live-search data', (done) => {
       chai.request(app)
-      .get('/search/live-search')
+      .get('/search/live')
       .end((error, response) => {
         response.should.have.status(200);
         done();
