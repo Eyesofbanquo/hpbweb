@@ -1,0 +1,42 @@
+{
+    "env": {
+        "node": true,
+        "commonjs": true,
+        "es2021": true,
+        "mocha": true
+    },
+    "extends": ["eslint:recommended"],
+    "plugins": ["unused-imports", "import"],
+    "parserOptions": {
+        "ecmaVersion": 12
+    },
+    "rules": {
+        "import/order": ["error", {
+            "groups": ["builtin", "external", "internal", "parent", "sibling"],
+            "newlines-between": "always",
+            "alphabetize": {"order": "asc", "caseInsensitive": true}
+        }],
+        "no-unused-vars": "off",
+        "unused-imports/no-unused-imports": "error",
+        "unused-imports/no-unused-vars": [
+            "error",
+            {"vars": "all"}
+        ],
+        "indent": [
+            "error",
+            2
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ]
+    }
+}

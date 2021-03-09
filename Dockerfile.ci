@@ -6,6 +6,8 @@ COPY ["src/", "./src/"]
 
 COPY ["package.json", "package-lock.json", "./"]
 
+COPY [".eslintrc.json", ".prettierrc", "./"]
+
 ENV LOCAL_ENABLED=true
 
 RUN npm ci --also=dev
