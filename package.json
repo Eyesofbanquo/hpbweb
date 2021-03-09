@@ -10,7 +10,7 @@
     "test": "LOCAL_ENABLED=true mocha \"./src/**/*.test.js\" --reporter nyan --exit",
     "ci:test": "LOCAL_ENABLED=true mocha \"**/*.test.js\" --reporter nyan --exit",
     "inspect:ci:test": "docker run -it --entrypoint=/bin/sh hpbtest",
-    "lint": "eslint ./src"
+    "lint": "eslint \"src/**/*.js\""
   },
   "keywords": [],
   "author": "",

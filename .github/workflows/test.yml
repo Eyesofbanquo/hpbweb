@@ -2,7 +2,7 @@ name: Main Tests
 
 on:
   pull_request:
-    branches: ["master"]
+    branches: ['master']
 
 jobs:
   test:
@@ -10,6 +10,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
+      - name: Current ESLint rules
+        run: npx eslint --print-config .eslintrc.json
+
+      - name: Lint project image
+        run: npx eslint "src/**/*.js"
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
