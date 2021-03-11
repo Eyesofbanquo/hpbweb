@@ -38,7 +38,7 @@ router.get('/', async (request, response) => {
       },
     })
     .then((res) => {
-      response.send(res.data);
+      response.send(res.data.hits);
     });
 });
 
@@ -72,11 +72,11 @@ router.get('/top', async (request, response) => {
         inHpbStock: 'true',
         sort: 'salesRankHpbWeb:desc',
         type: 'Catalog::Book',
-        author: byAuthor,
+        author: [byAuthor],
       },
     })
     .then((res) => {
-      response.send(res.data);
+      response.send(res.data.hits);
     });
 });
 

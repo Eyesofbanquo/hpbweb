@@ -10,7 +10,8 @@
     "test": "LOCAL_ENABLED=true mocha \"./src/**/*.test.js\" --reporter nyan --exit",
     "ci:test": "LOCAL_ENABLED=true mocha \"**/*.test.js\" --reporter nyan --exit",
     "inspect:ci:test": "docker run -it --entrypoint=/bin/sh hpbtest",
-    "lint": "eslint \"src/**/*.js\""
+    "lint": "eslint \"src/**/*.js\"",
+    "dev:refresh": "LOCAL_ENABLED=true nodemon -x node ./src/app.js"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +24,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mocha": "^8.3.1",
+    "nodemon": "^2.0.7",
     "serverless-http": "^2.7.0"
   },
   "devDependencies": {
