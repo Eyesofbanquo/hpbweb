@@ -13,4 +13,4 @@ ENV LOCAL_ENABLED=true
 RUN npm ci --also=dev
 
 # You can overwrite command in `serverless.yml` template
-CMD ["npm", "run", "ci:test"]
+CMD ["npm", "run", "test"]
